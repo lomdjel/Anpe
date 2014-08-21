@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- start: Meta -->
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>{% block title %}Job Board{% endblock %}</title>
+		<meta name="description" content="">
+		<meta name="keywords" content="Template, Theme, web, html5, css3, Bootstrap" />
+		<meta name="author" content="">
+		<!-- end: Meta -->
+		
+		<!-- start: Mobile Specific -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- end: Mobile Specific -->
+		
+		{% block stylesheets %}
+        	<!-- start: CSS -->
+		    <!-- CSS -->
+		    
+			<link rel="stylesheet" href="{{ asset('public/css/theme_switcher.css') }}" type="text/css">
+		
+			<link rel="stylesheet" href="{{ asset('public/css/job_blue.responsive.css') }}" title="job_blue" type="text/css">
+			
+			<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700">
+			<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Serif">
+			<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Boogaloo">
+			<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Economica:700,400italic">
+			<!-- end: CSS -->
+		
+		    <!--[if lt IE 9]>
+				<link rel="stylesheet" href="css/bootstrap_ie7.css" type="text/css">
+				<link rel="stylesheet" href="css/ie7.css" type="text/css">
+				<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+			<![endif]-->
+			
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        
+        {% include '::header.html.twig' %}
+        
+        {#% include '::carousel.html.twig' %#}
+        
+        {% include '::messages.html.twig' %}
+        
+        {% block body %}
+        
+        {% endblock %}
+        
+        {% include '::footer.html.twig' %}
+        
+        {% block javascripts %}
+        
+			<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+			<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+			
+			<script src="{{ asset('public/js/jquery.js')}}"></script>
+			
+			<script src="{{ asset('public/js/jquery-ui.js')}}"></script>
+			
+			<script src="{{ asset('public/js/jquery.flot.js')}}"></script>
+			
+			<script src="{{ asset('public/js/bootstrap.js')}}"></script>
+			
+			<script src="{{ asset('public/js/global.js')}}"></script>
+			
+			<script src="{{ asset('public/js/stylesheetToggle.js')}}"></script>
+			
+			<script>
+				$(function() {
+					$.stylesheetInit();
+					$('#theme_switcher').val('job_blue');
+					$('#theme_switcher_btn').bind('click',
+					function(e) {
+						$.stylesheetSwitch($('#theme_switcher').val());
+						return false;
+					}
+					);
+				});
+			</script>
+			
+        {% endblock %}
+    </body>
+</html>
+

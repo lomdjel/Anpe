@@ -1,0 +1,23 @@
+anpe_front:
+    resource: "@AnpeFrontBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+anpe_user:
+    resource: "@AnpeUserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+
+login:
+    pattern:   /login
+    defaults:  { _controller: AnpeUserBundle:Security:login }
+
+login_check:
+    pattern:   /login_check
+
+logout:
+    pattern:   /logout
+    
+
+
